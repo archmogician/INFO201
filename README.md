@@ -1,2 +1,2 @@
-# INFO201P1
-Repository for our INFO 201 first project.
+# INFO201 Final Project
+Repository for our INFO 201 final project. Our project focuses on.....<stuff>
