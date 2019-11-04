@@ -1,6 +1,7 @@
 # **Fuel Economy and Its Impact on the Environment**
 
 #### Project Code Name:
+NOGAS
 
 #### Team Member Names:
 Ye Ju Kim, David Xu, Kevin Zhao, Talin Hans
