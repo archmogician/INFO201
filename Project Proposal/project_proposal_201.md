@@ -27,7 +27,7 @@ Are there any correlations between the trends of fuel efficiency and the trends 
 ### Possible Data Sets:
 * Automotive trends report from EPA. This dataset contains data on every new light-duty vehicle model sold in the United States since 1975. This dataset presents current and historic data that provides a comprehensive overview of the automotive industry here in the U.S. It also contains data of CO emissions. link: https://www.epa.gov/automotive-trends/download-data-automotive-trends-report. There are 44 observations, one observation for each year. There are 8 attributes, which are attributes of the new cars in that year.
 
-* Automotive trends report from EPA. This dataset contains data on every new light-duty vehicle model sold in the United States since 1975. This dataset presents current and historic data that provides a comprehensive overview of the automotive industry here in the U.S. It also contains data of CO emissions. link: https://www.epa.gov/automotive-trends/download-data-automotive-trends-report. There are 44 observations, one observation for each year. There are 8 attributes, which are attributes of the new cars in that year.
+* National air quality trends report from EPA. This dataset shows the national trends for distinguishing pollutant emission contributions among major source types on a national level.  The trends shown are for criteria air pollutants (CAPs) and precursors covered by the National Ambient Air Quality Standards (NAAQS).  link: https://www.epa.gov/air-emissions-inventories/air-pollutant-emissions-trends-data. There are 7 datasheets, one for each CAPs, which includes CO, NOx, PM2.5, etc. There are 13 observations for each datasheet, which are the sources of pollutants, including highway and off-highway vehicles. There are 33 attributes, which are the years the data attribute to.
 
 ### Info Visualizations
 Figure 1: This graphic shows the national trends in carbon monoxide levels in the air. In our project, we would like to analyze the trends between fuel efficiency and air quality. (Source: The United States Environmental Protection Agency)
@@ -50,3 +50,4 @@ Figure 2: This graphic shows the estimated Carbon Dioxide(CO2) emissions for new
 ### References
 * [1] CO Air Quality, 1980 - 2018. United States Environmental Protection Agency. Retrieved from: https://www.epa.gov/air-trends/carbon-monoxide-trends
 * [2] Highlights of the Automotive Trends Report. United States Environmental Protection Agency. Retrieved from: https://www.epa.gov/automotive-trends/highlights-automotive-trends-report
+* https://www.unenvironment.org/explore-topics/climate-change/why-does-climate-change-matter
