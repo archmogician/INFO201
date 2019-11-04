@@ -18,10 +18,8 @@ Ye Ju Kim, David Xu, Kevin Zhao, Talin Hans
 
 ### Research Questions:
 * How has a fuel efficiency of automotive in the U.S. changed over time?
-Are there any correlations between the trends of fuel efficiency and the trends of emissions?
 
-* How has a fuel efficiency of automotive in the U.S. changed over time?
-Are there any correlations between the trends of fuel efficiency and the trends of emissions?
+* Are there any correlations between the trends of fuel efficiency and the trends of emissions?
 
 
 ### Possible Data Sets:
