@@ -5,4 +5,4 @@ We will be using the skills we learned in the class to explore real world proble
 
 As for right now, the project is in progress. We expected to deliver it through a website form informative visualizations coming from official datasets from the EPA.
 
-This is our [project proposal](https://github.com/xudav18/INFO201/wiki)
+This is our [project proposal](https://github.com/xudav18/INFO201/wiki) under the wiki section.
