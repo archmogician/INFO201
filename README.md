@@ -1,4 +1,4 @@
-# INFO201 Project
+# INFO201 Project: Fuel Economy and Its Impact on the Environment
 This is our repository of the project for INFO201 2019 fall.
 
 We will be using the skills we learned in the class to explore real world problems. In this case, we are exploring the correlations between among different trends of the U.S.'s automobile fuel efficiency as well as comparing them to the trends of emissions.   
