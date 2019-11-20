@@ -1,7 +1,10 @@
+# Load plotly here to avoid protential errors
+library(plotly)
+
 intro_tab <- tabPanel(
   "Introduction",
   titlePanel("Problem situation"),
-  p("abc"),
+  p(""),
   hr(),
   h2("Research questions"),
   p("1."),
@@ -16,7 +19,7 @@ performance_trends <- tabPanel(
       p("controls")
     ),
     mainPanel(
-      p("plot"),
+      plotlyOutput("vis1"),
       p("Research questions and findings")
     )
   )
