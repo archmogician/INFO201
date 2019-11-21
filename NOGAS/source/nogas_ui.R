@@ -6,8 +6,8 @@ intro_tab <- tabPanel(
   "Introduction",
   titlePanel("Problem situation"),
   p("While rapid industrialization has improved our standard
-    of living significantly, the pollution it produces has 
-    detrimental effects on societies and ecosystems on a global 
+    of living significantly, the pollution it produces has
+    detrimental effects on societies and ecosystems on a global
     scale. Additionally, because of the widespread implementation
     of newfound technology, such as the invention of cars, almost
     every person on this planet not only contributes but is affected
@@ -16,9 +16,11 @@ intro_tab <- tabPanel(
   h2("Research questions"),
   p("1.How has fuel efficiency and other attributes of automotive in the U.S.
     changed over time?"),
-  p("2. What kind of correlation exists between the change in automotive technology and their 
+  p("2. What kind of correlation exists between the change in automotive
+  technology and their
     fuel efficiency and attributes?"),
-  p("3. Are there any comparisons that can be made with fuel efficiency and the air quality?")
+  p("3. Are there any comparisons that can be made with fuel efficiency
+    and the air quality?")
 )
 
 # Vis page 1
@@ -44,7 +46,7 @@ tech_trends <- tabPanel(
   titlePanel("Trends of fuel efficent technology"),
   sidebarLayout(
     sidebarPanel(
-      selectInput("choice", "Choose a technology", c('Engine'))
+      selectInput("choice", "Choose a technology", c("Engine"))
     ),
     mainPanel(
       plotlyOutput("vis2"),
@@ -86,7 +88,7 @@ conclusion_tab <- tabPanel(
 )
 
 # About tech page1
-R_tab <- tabPanel(
+r_tab <- tabPanel(
   "R language",
   titlePanel("Use of R language"),
   p("We uses shiny, dplr, etc")
@@ -96,9 +98,12 @@ R_tab <- tabPanel(
 report_tab <- tabPanel(
   "Technical report",
   titlePanel("Technical Report"),
-  p("This is out link to the",
+  p(
+    "This is out link to the",
     a("technical report",
-      href = "https://github.com/xudav18/INFO201/wiki/Technical-Report"))
+      href = "https://github.com/xudav18/INFO201/wiki/Technical-Report"
+    )
+  )
 )
 
 # About tech page3
@@ -111,7 +116,7 @@ dataset_tab <- tabPanel(
 # About tech menu
 about_tech_menu <- navbarMenu(
   "About the tech",
-  R_tab,
+  r_tab,
   report_tab,
   dataset_tab
 )

@@ -4,6 +4,6 @@ nogas_server <- function(input, output) {
     attributes_plot
   )
   output$vis2 <- renderPlotly(
-    tech_plots (input$choice)
+    tech_plots(input$choice)
   )
 }
