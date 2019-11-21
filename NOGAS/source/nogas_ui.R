@@ -32,7 +32,7 @@ attributes_trends <- tabPanel(
     ),
     mainPanel(
       plotlyOutput("vis1"),
-      p("Research questions and findings <br>"),
+      p("Research questions and findings "),
       p("We can see that fuel efficiency improved, etc")
     )
   )
@@ -48,7 +48,7 @@ tech_trends <- tabPanel(
     ),
     mainPanel(
       plotlyOutput("vis2"),
-      p("Research questions and findings <br>"),
+      p("Research questions and findings "),
       p("We can see that technology")
     )
   )
@@ -64,7 +64,7 @@ emissions_trends <- tabPanel(
     ),
     mainPanel(
       p("Plot"),
-      p("Research questions and findings <br>"),
+      p("Research questions and findings "),
       p("We can see that technology")
     )
   )
