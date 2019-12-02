@@ -46,7 +46,9 @@ tech_trends <- tabPanel(
   titlePanel("Trends of fuel efficent technology"),
   sidebarLayout(
     sidebarPanel(
-      selectInput("choice", "Choose a technology", c("Engine"))
+      selectInput("choice", "Choose a technology", c("Engine",
+                                                     "Transmission",
+                                                     "Drivetrain"))
     ),
     mainPanel(
       plotlyOutput("vis2"),

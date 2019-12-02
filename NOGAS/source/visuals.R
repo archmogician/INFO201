@@ -97,11 +97,9 @@ tech_plots <- function(type) {
   if (type == "Engine") {
     tech_plot_engine
   } else if (type == "Transmission") {
-    "p(graph2)"
-    # df <- auto_tech_df[,c(1,8:13)]
+    tech_plot_trans
   } else {
-    "p(graph2)"
-    # df <- auto_tech_df[,c(1,14:16)]
+    tech_plot_drive
   }
 }
 
@@ -154,3 +152,87 @@ tech_plot_engine <- plot_ly(
       ticksuffix = "%"
     )
   )
+
+tech_plot_trans <- plot_ly(
+  data = auto_tech_df[,c(1,8:13)],
+  x = ~year,
+  y = ~manual,
+  name = "Manual",
+  type = "scatter",
+  mode = "none",
+  stackgroup = "one",
+  groupnorm = "percent",
+  fillcolor = "#F5FF8D"
+) %>%
+  add_trace(
+    y = ~auto_lockup,
+    name = "Automatic w/ lockup",
+    fillcolor = "#50CB86"
+  ) %>%
+  add_trace(
+    y = ~auto_nolock,
+    name = "Automatic w/o lockup",
+    fillcolor = "#4C74C9"
+  ) %>%
+  add_trace(
+    y = ~cvt_hybrid,
+    name = "CVT w/ Hybrid Engine",
+    fillcolor = "#700961"
+  ) %>%
+  add_trace(
+    y = ~cvt,
+    name = "CVT w/o Hybrid Engine",
+    fillcolor = "red"
+  ) %>%
+  add_trace(
+    y = ~other,
+    name = "Other",
+    fillcolor = "black"
+  ) %>%
+  layout(
+    title = "Market Shares of Different Transmission Technology",
+    xaxis = list(
+      title = "Years",
+      showgrid = FALSE
+    ),
+    yaxis = list(
+      title = "Percentage of the market",
+      showgrid = FALSE,
+      ticksuffix = "%"
+    )
+  )
+
+tech_plot_drive <- plot_ly(
+  data = auto_tech_df[,c(1,14:16)],
+  x = ~year,
+  y = ~fwd,
+  name = "Front Wheel Drive",
+  type = "scatter",
+  mode = "none",
+  stackgroup = "one",
+  groupnorm = "percent",
+  fillcolor = "#F5FF8D"
+) %>%
+  add_trace(
+    y = ~rwd,
+    name = "Rear Wheel Drive",
+    fillcolor = "#50CB86"
+) %>%
+  add_trace(
+    y = ~awd,
+    name = "All Wheel Drive",
+    fillcolor = "#700961"
+  ) %>%
+  layout(
+    title = "Market Shares of Different Drivetrain Technology",
+    xaxis = list(
+      title = "Years",
+      showgrid = FALSE
+    ),
+    yaxis = list(
+      title = "Percentage of the market",
+      showgrid = FALSE,
+      ticksuffix = "%"
+    )
+  )
+
