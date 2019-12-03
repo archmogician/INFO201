@@ -5,9 +5,9 @@ account: kevinxz
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1483059
-bundleId: 2633180
+bundleId: 2637937
 url: https://kevinxz.shinyapps.io/nogas/
-when: 1575311763.13762
+when: 1575415243.5406
 asMultiple: FALSE
 asStatic: FALSE
 ignoredFiles: source/.Rhistory

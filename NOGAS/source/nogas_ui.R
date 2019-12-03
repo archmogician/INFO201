@@ -5,13 +5,34 @@ library(plotly)
 intro_tab <- tabPanel(
   "Introduction",
   titlePanel("Problem situation"),
-  p("While rapid industrialization has improved our standard
-    of living significantly, the pollution it produces has
-    detrimental effects on societies and ecosystems on a global
-    scale. Additionally, because of the widespread implementation
-    of newfound technology, such as the invention of cars, almost
-    every person on this planet not only contributes but is affected
-    by this issue on a daily basis, making them a direct stakeholder"),
+  p('While rapid industrialization has improved our standard of living
+    significantly, the pollution it produces has detrimental effects on
+    societies and ecosystems on a global scale. Additionally, because of
+    the widespread implementation of newfound technology, such as the
+    invention of cars, almost every person on this planet not only
+    contributes but is affected by this issue on a daily basis, making
+    them a direct stakeholder. Despite the complications this brings to
+    our progression as a civilization, many remain conflicted when weighing
+    the convenience of such industrialization with the dangerous long-term
+    effects it leaves. Even with its unethical reasoning, society holds fast
+    onto harmful technology that could potentially cause harm to the
+    environment for its short-term benefits. Using the envisioning cards,
+    we can discuss specific ones such as "Untargeted Use", "Future
+    Stakeholders" and "Indirect Stakeholders". Although these technologies
+    were\'t intentionally designed to harm the environment, ultimately,
+    future generations become an indirect and future stakeholder since
+    their future home\'s living conditions become threatened. Another indirect
+    stakeholder would be wildlife and marine animals because although they
+    don\'t necessarily use these technologies, their habitats are affected by
+    the harmful effects of them. Numerous other studies on the climate and fuel
+    efficiency have been conducted by other companies and organizations.
+    These works are helpful towards us as we are able to use them as
+    inspiration/reference when visualizing the datasets. We are motivated to
+    work on this issue, and care about it as this is an existential issue that
+    has the ability to wipe out our entire species, but it seems that many do
+    not care due to the fact that it is happening slowly and not
+    instantaneously. It is up to our generation to amend the problems and
+    evolves to rely on cleaner, greener technology.'),
   hr(),
   h2("Research questions"),
   p("1.How has fuel efficiency and other attributes of automotive in the U.S.
@@ -25,7 +46,7 @@ intro_tab <- tabPanel(
 
 # Vis page 1
 attributes_trends <- tabPanel(
-  "Trends of cars' performance",
+  "Trends of auto. attributes",
   titlePanel("Trends of automobile performance"),
   sidebarLayout(
     sidebarPanel(
@@ -52,22 +73,23 @@ tech_trends <- tabPanel(
     ),
     mainPanel(
       plotlyOutput("vis2"),
-      p("Research questions and findings "),
-      p("We can see that technology")
+      p("Research questions and findings"),
+      textOutput("vis2_text")
     )
   )
 )
 
 # Vis page 3
 emissions_trends <- tabPanel(
-  "Trends of emmissions",
-  titlePanel("Trends of emmisions from automobile"),
+  "Trends of emissions",
+  titlePanel("Trends of emissions from automobile"),
   sidebarLayout(
     sidebarPanel(
-      p("controls")
+      p("controls: Hover the graph for detai info, click on legends
+        to seperate data, additional control on the top left corner")
     ),
     mainPanel(
-      p("Plot"),
+      plotlyOutput("vis3"),
       p("Research questions and findings "),
       p("We can see that technology")
     )
@@ -118,8 +140,8 @@ dataset_tab <- tabPanel(
 # About tech menu
 about_tech_menu <- navbarMenu(
   "About the tech",
-  r_tab,
   report_tab,
+  r_tab,
   dataset_tab
 )
 

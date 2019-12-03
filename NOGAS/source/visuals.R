@@ -32,7 +32,7 @@ attributes_df$zero_60_percent <- attributes_df$zero_60 /
   max(na.rm = TRUE, attributes_df$zero_60)
 attributes_df$co2_percent <- attributes_df$co2 / max(attributes_df$co2)
 
-# vis1
+# vis1 -- comparing trends in automotive attributes.
 attributes_plot <- plot_ly(data = attributes_df) %>%
   add_trace(
     x = ~year,
@@ -103,6 +103,17 @@ tech_plots <- function(type) {
   }
 }
 
+# Choosing the right texts for the right vis2 graph.
+tech_findings <- function(type) {
+  if (type == "Engine") {
+    text <- "As we see from the graph, the engine"
+  } else if (type == "Transmission") {
+    text <- "As we see from the graph, the transmission"
+  } else {
+    text <- "p('As we see from the graph, ')"
+  }
+}
+
 # Engine tech plot
 tech_plot_engine <- plot_ly(
   data = auto_tech_df[, 1:7],
@@ -153,6 +164,7 @@ tech_plot_engine <- plot_ly(
     )
   )
 
+# Transmission tech plot
 tech_plot_trans <- plot_ly(
   data = auto_tech_df[,c(1,8:13)],
   x = ~year,
@@ -202,6 +214,7 @@ tech_plot_trans <- plot_ly(
     )
   )
 
+# Drivetrain tech plot
 tech_plot_drive <- plot_ly(
   data = auto_tech_df[,c(1,14:16)],
   x = ~year,
@@ -236,3 +249,129 @@ tech_plot_drive <- plot_ly(
     )
   )
 
+# Compute percentage from the earlist available year.
+compute_per_change <- function(col) {
+  result <- c()
+  i <- 1
+  x <- col
+  base <- NA
+  for (val in x) {
+    current <- x[i]
+    if(is.na(base) & !is.na(current)) {
+      base <- current
+    }
+    value <- (current - base) / base
+    i <- i+1
+    result <- append(result, value)
+  }
+  return(result)
+}
+
+# Adding percent change columns to the dataframe for vis3.
+air_quality_df$co_change <- compute_per_change(air_quality_df$co)
+air_quality_df$nox_change <- compute_per_change(air_quality_df$nox)
+air_quality_df$pm10_change <- compute_per_change(air_quality_df$pm10)
+air_quality_df$pm2.5_change <- compute_per_change(air_quality_df$pm2.5)
+air_quality_df$so2_change <- compute_per_change(air_quality_df$so2)
+air_quality_df$voc_change <- compute_per_change(air_quality_df$voc)
+air_quality_df$nh3_change <- compute_per_change(air_quality_df$nh3)
+
+# Vis3 -- line graph comparing percent changes.
+emission_plot <- plot_ly(data = air_quality_df) %>%
+  add_trace(
+    x = ~year,
+    y = ~miles,
+    name = "Vehicles Miles Traveled",
+    type = "scatter",
+    mode = "lines",
+    connectgaps = TRUE,
+    hovertemplate = "Year: %{x}<br>Miles traveled percent change: %{y:.2f}
+                    <extra></extra>"
+  ) %>%
+  add_trace(
+    x = ~year,
+    y = ~population,
+    name = "Population",
+    type = "scatter",
+    mode = "lines",
+    connectgaps = TRUE,
+    hovertemplate = "Year: %{x}<br>Population percent change: %{y:.2f}
+    <extra></extra>"
+  ) %>%
+  add_trace(
+    customdata = ~co,
+    x = ~year,
+    y = ~co_change,
+    name = "Carbon Monoxide",
+    type = "scatter",
+    mode = "lines",
+    hovertemplate = "Year: %{x}<br>CO: %{customdata:.1f}
+    <extra></extra>"
+  ) %>%
+  add_trace(
+    customdata = ~nox,
+    x = ~year,
+    y = ~nox_change,
+    name = "Nitrogen Oxides",
+    type = "scatter",
+    mode = "lines",
+    hovertemplate = "Year: %{x}<br>NOx(): %{customdata:.1f}
+    <extra></extra>"
+  ) %>%
+  add_trace(
+    customdata = ~pm10,
+    x = ~year,
+    y = ~pm10_change,
+    name = "PM10",
+    type = "scatter",
+    mode = "lines",
+    hovertemplate = "Year: %{x}<br>PM 10: %{customdata:.1f}
+    <extra></extra>"
+  ) %>%
+  add_trace(
+    customdata = ~pm2.5,
+    x = ~year,
+    y = ~pm2.5_change,
+    name = "PM2.5",
+    type = "scatter",
+    mode = "lines",
+    hovertemplate = "Year: %{x}<br>PM 2.5: %{customdata:.1f}
+    <extra></extra>"
+  ) %>%
+  add_trace(
+    customdata = ~so2,
+    x = ~year,
+    y = ~so2_change,
+    name = "Sulfur dioxide",
+    type = "scatter",
+    mode = "lines",
+    hovertemplate = "Year: %{x}<br>SO2 : %{customdata:.1f}
+    <extra></extra>"
+  ) %>%
+  add_trace(
+    customdata = ~voc,
+    x = ~year,
+    y = ~voc_change,
+    name = "Volatile organic compounds",
+    type = "scatter",
+    mode = "lines",
+    hovertemplate = "Year: %{x}<br>VOC : %{customdata:.1f}
+    <extra></extra>"
+  ) %>%
+  add_trace(
+    customdata = ~nh3,
+    x = ~year,
+    y = ~nh3_change,
+    name = "Ammonia",
+    type = "scatter",
+    mode = "lines",
+    hovertemplate = "Year: %{x}<br>NH3 : %{customdata:.1f}
+    <extra></extra>"
+  ) %>%
+  layout(
+    title = "Percent changes of growth and pollutants",
+    yaxis = list(
+      tickformat = "%",
+      title = "Percent Change"
+    )
+  )
