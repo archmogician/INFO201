@@ -108,7 +108,7 @@ visual_menu <- navbarMenu(
 conclusion_tab <- tabPanel(
   "Conclusions",
   titlePanel("Conclusions of our findings"),
-  p("Base on our findings, we concluded that")
+  p("Base on our findings, we concluded that ")
 )
 
 # About tech page1
