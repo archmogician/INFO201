@@ -107,11 +107,32 @@ tech_plots <- function(type) {
 # Choosing the right texts for the right vis2 graph.
 tech_findings <- function(type) {
   if (type == "Engine") {
-    text <- "As we see from the graph, the engine"
+    text <- "<p>There are 2 noticeable changes of trends in this graph regarding
+             engine technologies. One happened around mid 80s, when carburetor
+             started to phase out, and port injection and throttle body
+             injection began to gain huge market shares. Another one was around
+             late 2000s, when direct injection began to rise in popularity.
+             These 2 findings correlate to the trends we observed in the first
+            visualization, the trends of automotive attributes.</p>"
   } else if (type == "Transmission") {
-    text <- "As we see from the graph, the transmission"
+    text <- "<p>There are 2 noticeable changes of trends in this graph regarding
+             transmission technology as well. One happened around mid 80s,
+             when automatic without lock up feature started to phase out,
+             manual started to decrease, and automatic with lock up started
+             its way of gaining huge market shares. Another one was around
+             2000s, when continuously variable transmission began to gain
+             market shares. These 2 findings correlate to the trends we
+             observed in the first visualization, the trends of automotive
+             attributes</p>"
   } else {
-    text <- "p('As we see from the graph, ')"
+    text <- "<p>From this graph, we could see that the front wheel drivetrain
+             occupied a large market shares, and FWD vehicles generally have
+             better fuel economy <a href=\"https://www.usautosales.info/blogs
+             /1924/the-perfect-car/front-wheel-drive-vs-rear-wheel-drive/\">
+             [2]</a>. The gaining popularity of all wheel drive vehicles in
+             recent years shows that despite the slightly poor fuel efficiency
+             associated with AWD, the improvement in technology is likely to
+             continue to offset the negativity of AWD systems.</p>"
   }
 }
 

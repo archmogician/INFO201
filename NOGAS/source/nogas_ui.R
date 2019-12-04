@@ -5,7 +5,7 @@ library(markdown)
 # Introduction
 intro_tab <- tabPanel(
   "Introduction",
-  includeMarkdown("introduction.md")
+  includeMarkdown("source/introduction.md")
 )
 
 # Vis page 1
@@ -61,7 +61,7 @@ tech_trends <- tabPanel(
     mainPanel(
       plotlyOutput("vis2"),
       p("Research questions and findings"),
-      textOutput("vis2_text")
+      htmlOutput("vis2_text")
     )
   )
 )
@@ -94,14 +94,14 @@ visual_menu <- navbarMenu(
 # Conclusion page
 conclusion_tab <- tabPanel(
   "Conclusions",
-  includeMarkdown("conclusions.md")
+  includeMarkdown("source/conclusions.md")
 
 )
 
 # About tech page 1
 r_tab <- tabPanel(
   "R language",
-  includeMarkdown("aboutr.md")
+  includeMarkdown("source/aboutr.md")
 )
 
 # About tech page2
