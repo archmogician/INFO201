@@ -1,5 +1,6 @@
 # Load libraries
 library(dplyr)
+library(markdown)
 library(plotly)
 
 # df for first visual
