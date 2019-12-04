@@ -131,7 +131,35 @@ conclusion_tab <- tabPanel(
     level out, engine power and acceleration continued to increase, while fuel
     economy started to climb up once again at a relatively quick rate, around
     10% each 5 years. We infer that new technology played an important role in
-    this change, and this trend is likely to be continued into the future.")
+    this change, and this trend is likely to be continued into the future.\n
+    <br>
+    <b>What kind of correlation exists between the change in automotive
+    technology and their fuel efficiency and other attributes?</b>
+    <br>
+    <ul>
+      <li>There are 2 noticeable changes of trends in this graph regarding
+      engine technologies. One happened around mid 80s, when carburetor started
+      to phase out, and port injection and throttle body injection began to 
+      gain huge market shares. Another one was around late 2000s, when direct
+      injection began to rise in popularity. These 2 findings correlate to the
+      trends we observed in the first visualization, the trends of automotive
+      attributes.</li>
+      <li>There are 2 noticeable changes of trends in this graph regarding
+      transmission technology as well. One happened around mid 80s, when
+      automatic without lock up feature started to phase out, manual started
+      to decrease, and automatic with lock up started its way of gaining huge
+      market shares. Another one was around 2000s, when continuously variable
+      transmission began to gain market shares. These 2 findings correlate to
+      the trends we observed in the first visualization, the trends of 
+      automotive attributes</li>
+      <li>From this graph, we could see that the front wheel drivetrain
+      occupied a large market shares, and FWD vehicles generally have better
+      fuel economy[2] (https://www.usautosales.info/blogs/1924/the-perfect-car/front-wheel-drive-vs-rear-wheel-drive/).
+      The gaining popularity of all wheel drive vehicles in recent years shows
+      that despite the slightly poor fuel efficiency associated with AWD, the
+      improvement in technology is likely to continue to offset the negativity
+      of AWD systems.</li>
+    </ul>")
 )
 
 # About tech page1
