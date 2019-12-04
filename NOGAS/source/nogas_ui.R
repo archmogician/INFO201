@@ -1,15 +1,16 @@
 # Load plotly here to avoid potential errors
 library(plotly)
+library(markdown)
 
 # Introduction
 intro_tab <- tabPanel(
-  h6("Introduction"),
+  "Introduction",
   includeMarkdown("introduction.md")
 )
 
 # Vis page 1
 attributes_trends <- tabPanel(
-  h6("Trends of auto. attributes"),
+  "Trends of auto. attributes",
   titlePanel("Trends of automobile performance"),
   sidebarLayout(
     sidebarPanel(
@@ -26,7 +27,7 @@ attributes_trends <- tabPanel(
 
 # Vis page 2
 tech_trends <- tabPanel(
-  h6("Trends of technology"),
+  "Trends of technology",
   titlePanel("Trends of fuel efficient technology"),
   sidebarLayout(
     sidebarPanel(
@@ -44,7 +45,7 @@ tech_trends <- tabPanel(
 
 # Vis page 3
 emissions_trends <- tabPanel(
-  h6("Trends of emissions"),
+  "Trends of emissions",
   titlePanel("Trends of emissions from automobile"),
   sidebarLayout(
     sidebarPanel(
@@ -69,16 +70,15 @@ visual_menu <- navbarMenu(
 
 # Conclusion page
 conclusion_tab <- tabPanel(
-  h5("Conclusions"),
+  "Conclusions",
   includeMarkdown("conclusions.md")
 
 )
 
-# About tech page1
+# About tech page 1
 r_tab <- tabPanel(
   "R language",
-  titlePanel("Use of R language"),
-  p("We used shiny, dplyr, etc")
+  includeMarkdown("aboutr.md")
 )
 
 # About tech page2

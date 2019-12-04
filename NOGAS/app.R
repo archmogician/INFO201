@@ -1,6 +1,7 @@
 # Load libraries
 library(shinythemes)
 library(shiny)
+library(markdown)
 
 # Load in ui, server, and codes for visualization
 # set the directory on NOGAS folder.
