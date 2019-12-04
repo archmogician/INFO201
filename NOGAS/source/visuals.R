@@ -107,11 +107,32 @@ tech_plots <- function(type) {
 # Choosing the right texts for the right vis2 graph.
 tech_findings <- function(type) {
   if (type == "Engine") {
-    text <- "As we see from the graph, the engine"
+    text <- "<p>There are 2 noticeable changes of trends in this graph regarding
+             engine technologies. One happened around mid 80s, when carburetor
+             started to phase out, and port injection and throttle body
+             injection began to gain huge market shares. Another one was around
+             late 2000s, when direct injection began to rise in popularity.
+             These 2 findings correlate to the trends we observed in the first
+            visualization, the trends of automotive attributes.</p>"
   } else if (type == "Transmission") {
-    text <- "As we see from the graph, the transmission"
+    text <- "<p>There are 2 noticeable changes of trends in this graph regarding
+             transmission technology as well. One happened around mid 80s,
+             when automatic without lock up feature started to phase out,
+             manual started to decrease, and automatic with lock up started
+             its way of gaining huge market shares. Another one was around
+             2000s, when continuously variable transmission began to gain
+             market shares. These 2 findings correlate to the trends we
+             observed in the first visualization, the trends of automotive
+             attributes</p>"
   } else {
-    text <- "p('As we see from the graph, ')"
+    text <- "<p>From this graph, we could see that the front wheel drivetrain
+             occupied a large market shares, and FWD vehicles generally have
+             better fuel economy <a href=\"https://www.usautosales.info/blogs
+             /1924/the-perfect-car/front-wheel-drive-vs-rear-wheel-drive/\">
+             [2]</a>. The gaining popularity of all wheel drive vehicles in
+             recent years shows that despite the slightly poor fuel efficiency
+             associated with AWD, the improvement in technology is likely to
+             continue to offset the negativity of AWD systems.</p>"
   }
 }
 
@@ -167,7 +188,7 @@ tech_plot_engine <- plot_ly(
 
 # Transmission tech plot
 tech_plot_trans <- plot_ly(
-  data = auto_tech_df[,c(1,8:13)],
+  data = auto_tech_df[, c(1, 8:13)],
   x = ~year,
   y = ~manual,
   name = "Manual",
@@ -217,7 +238,7 @@ tech_plot_trans <- plot_ly(
 
 # Drivetrain tech plot
 tech_plot_drive <- plot_ly(
-  data = auto_tech_df[,c(1,14:16)],
+  data = auto_tech_df[, c(1, 14:16)],
   x = ~year,
   y = ~fwd,
   name = "Front Wheel Drive",
@@ -231,7 +252,7 @@ tech_plot_drive <- plot_ly(
     y = ~rwd,
     name = "Rear Wheel Drive",
     fillcolor = "#50CB86"
-) %>%
+  ) %>%
   add_trace(
     y = ~awd,
     name = "All Wheel Drive",
@@ -258,11 +279,11 @@ compute_per_change <- function(col) {
   base <- NA
   for (val in x) {
     current <- x[i]
-    if(is.na(base) & !is.na(current)) {
+    if (is.na(base) & !is.na(current)) {
       base <- current
     }
     value <- (current - base) / base
-    i <- i+1
+    i <- i + 1
     result <- append(result, value)
   }
   return(result)
@@ -316,7 +337,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "Nitrogen Oxides",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>NOx(): %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>NOx(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   add_trace(
@@ -326,7 +347,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "PM10",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>PM 10: %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>PM 10(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   add_trace(
@@ -336,7 +357,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "PM2.5",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>PM 2.5: %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>PM 2.5(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   add_trace(
@@ -346,7 +367,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "Sulfur dioxide",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>SO2 : %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>SO2(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   add_trace(
@@ -356,7 +377,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "Volatile organic compounds",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>VOC : %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>VOC(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   add_trace(
@@ -366,7 +387,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "Ammonia",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>NH3 : %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>NH3(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   layout(
