@@ -315,7 +315,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "Nitrogen Oxides",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>NOx(): %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>NOx(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   add_trace(
@@ -325,7 +325,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "PM10",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>PM 10: %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>PM 10(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   add_trace(
@@ -335,7 +335,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "PM2.5",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>PM 2.5: %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>PM 2.5(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   add_trace(
@@ -345,7 +345,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "Sulfur dioxide",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>SO2 : %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>SO2(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   add_trace(
@@ -355,7 +355,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "Volatile organic compounds",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>VOC : %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>VOC(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   add_trace(
@@ -365,7 +365,7 @@ emission_plot <- plot_ly(data = air_quality_df) %>%
     name = "Ammonia",
     type = "scatter",
     mode = "lines",
-    hovertemplate = "Year: %{x}<br>NH3 : %{customdata:.1f}
+    hovertemplate = "Year: %{x}<br>NH3(thousands of tons): %{customdata:.1f}
     <extra></extra>"
   ) %>%
   layout(

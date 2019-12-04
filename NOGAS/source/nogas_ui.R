@@ -55,8 +55,31 @@ attributes_trends <- tabPanel(
     ),
     mainPanel(
       plotlyOutput("vis1"),
-      p("Research questions and findings "),
-      p("We can see that fuel efficiency improved, etc")
+      h4("Research question:"),
+      p("How has fuel efficiency and other attributes of automotive in the
+        U.S. changed over time?"),
+      h4("Findings"),
+      p("Base on the graph, we could see a few trends among automotive
+      attributes from 1975. From 1975 to early 1980, the fuel economy
+      increased dramatically. However, the increase MPG came at the costs
+      of engine power and weight. Combine this observation and the oil
+      crisis during that period", a("[1]", href =
+      "https://en.wikipedia.org/wiki/1970s_energy_crisis"), "We infer that
+      the car manufactures scrambled to lower weight and engine power to
+      achieve a high fuel efficiency. Then, the weight and engine power
+      started to recover while MPG increased slightly. Base on our
+      observation from the second visualization page--the market share
+      of automotive technology,  we conclude that new technology was
+      developed to increase the engine performance without costing a
+      heavy toll on the fuel economy. Engine power, car weight, and
+      acceleration continued to increase throughout the 90s, however,
+      the fuel economy was decreasing at a relatively slow rate, about
+      3% every 5 years. Then around 2005, things changed once again.
+      The weight started to level out, engine power and acceleration
+      continued to increase, while fuel economy started to climb up
+      once again at a relatively quick rate, around 10% each 5 years.
+      We infer that new technology played an important role in this
+      change, and this trend is likely to be continued into the future.")
     )
   )
 )
