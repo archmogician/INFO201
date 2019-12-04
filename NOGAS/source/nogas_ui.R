@@ -106,60 +106,8 @@ visual_menu <- navbarMenu(
 
 # Conclusion page
 conclusion_tab <- tabPanel(
-  "Conclusions",
-  titlePanel("Conclusions of our findings"),
-  p("Base on our findings, we were successfully able to answer ur reserach 
-    questions as well as learnt alot which we weren't aware of earlier.
-    \n We found these answers to our research questions:
-    \n
-    <b>How has fuel efficiency and other attributes of automotive in the 
-      U.S. changed over time?</b>
-    Base on the graph, we could see a few trends among automotive attributes
-    from 1975. From 1975 to early 1980, the fuel economy increased 
-    dramatically. However, the increase MPG came at the costs of engine power
-    and weight. Combine this observation and the oil crisis during that period,
-    [1](https://en.wikipedia.org/wiki/1970s_energy_crisis)  We infer that the 
-    car manufactures scrambled to lower weight and engine power to achieve a 
-    high fuel efficiency. Then, the weight and engine power started to recover
-    while MPG increased slightly. Base on our observation from the second 
-    visualization page--the market share of automotive technology,  we conclude
-    that new technology was developed to increase the engine performance
-    without costing a heavy toll on the fuel economy. Engine power, car weight, 
-    and acceleration continued to increase throughout the 90s, however, the 
-    fuel economy was decreasing at a relatively slow rate, about 3% every 5 
-    years. Then around 2005, things changed once again. The weight started to
-    level out, engine power and acceleration continued to increase, while fuel
-    economy started to climb up once again at a relatively quick rate, around
-    10% each 5 years. We infer that new technology played an important role in
-    this change, and this trend is likely to be continued into the future.\n
-    <br>
-    <b>What kind of correlation exists between the change in automotive
-    technology and their fuel efficiency and other attributes?</b>
-    <br>
-    <ul>
-      <li>There are 2 noticeable changes of trends in this graph regarding
-      engine technologies. One happened around mid 80s, when carburetor started
-      to phase out, and port injection and throttle body injection began to 
-      gain huge market shares. Another one was around late 2000s, when direct
-      injection began to rise in popularity. These 2 findings correlate to the
-      trends we observed in the first visualization, the trends of automotive
-      attributes.</li>
-      <li>There are 2 noticeable changes of trends in this graph regarding
-      transmission technology as well. One happened around mid 80s, when
-      automatic without lock up feature started to phase out, manual started
-      to decrease, and automatic with lock up started its way of gaining huge
-      market shares. Another one was around 2000s, when continuously variable
-      transmission began to gain market shares. These 2 findings correlate to
-      the trends we observed in the first visualization, the trends of 
-      automotive attributes</li>
-      <li>From this graph, we could see that the front wheel drivetrain
-      occupied a large market shares, and FWD vehicles generally have better
-      fuel economy[2] (https://www.usautosales.info/blogs/1924/the-perfect-car/front-wheel-drive-vs-rear-wheel-drive/).
-      The gaining popularity of all wheel drive vehicles in recent years shows
-      that despite the slightly poor fuel efficiency associated with AWD, the
-      improvement in technology is likely to continue to offset the negativity
-      of AWD systems.</li>
-    </ul>")
+  h5("Conclusions"), includeMarkdown("conclusions.md")
+    
 )
 
 # About tech page1
