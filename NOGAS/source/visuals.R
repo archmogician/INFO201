@@ -188,7 +188,7 @@ tech_plot_engine <- plot_ly(
 
 # Transmission tech plot
 tech_plot_trans <- plot_ly(
-  data = auto_tech_df[,c(1,8:13)],
+  data = auto_tech_df[, c(1, 8:13)],
   x = ~year,
   y = ~manual,
   name = "Manual",
@@ -238,7 +238,7 @@ tech_plot_trans <- plot_ly(
 
 # Drivetrain tech plot
 tech_plot_drive <- plot_ly(
-  data = auto_tech_df[,c(1,14:16)],
+  data = auto_tech_df[, c(1, 14:16)],
   x = ~year,
   y = ~fwd,
   name = "Front Wheel Drive",
@@ -252,7 +252,7 @@ tech_plot_drive <- plot_ly(
     y = ~rwd,
     name = "Rear Wheel Drive",
     fillcolor = "#50CB86"
-) %>%
+  ) %>%
   add_trace(
     y = ~awd,
     name = "All Wheel Drive",
@@ -279,11 +279,11 @@ compute_per_change <- function(col) {
   base <- NA
   for (val in x) {
     current <- x[i]
-    if(is.na(base) & !is.na(current)) {
+    if (is.na(base) & !is.na(current)) {
       base <- current
     }
     value <- (current - base) / base
-    i <- i+1
+    i <- i + 1
     result <- append(result, value)
   }
   return(result)
