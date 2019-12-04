@@ -10,7 +10,7 @@ intro_tab <- tabPanel(
 
 # Vis page 1
 attributes_trends <- tabPanel(
-  "Trends of auto. attributes",
+  "Trends of auto. performance",
   titlePanel("Trends of automobile performance"),
   sidebarLayout(
     sidebarPanel(
@@ -77,13 +77,13 @@ conclusion_tab <- tabPanel(
 
 # About tech page 1
 r_tab <- tabPanel(
-  "R language",
+  "Usage of R",
   includeMarkdown("aboutr.md")
 )
 
 # About tech page2
 report_tab <- tabPanel(
-  "Technical report",
+  "Technical Report",
   titlePanel("Technical Report"),
   p(
     "This is out link to the",
@@ -95,9 +95,8 @@ report_tab <- tabPanel(
 
 # About tech page3
 dataset_tab <- tabPanel(
-  "Dataset",
-  titlePanel("Datasets we used"),
-  p("Source, data wrangling")
+  "Dataset Usage",
+  includeMarkdown("datasets.md")
 )
 
 # About tech menu
@@ -110,16 +109,8 @@ about_tech_menu <- navbarMenu(
 
 # About team page
 about_team_tab <- tabPanel(
-  "About us",
-  titlePanel("Information of our team"),
-  p("Project Code Name:NOGAS"),
-  p("Team Members:Ye Ju Kim, David Xu,
-  Kevin Zhao, Talin Hans"),
-  p("Affiliation:
-    Info-201: Technical Foundations of Informatics
-    The Information School
-    University of Washington
-    Autumn 2019")
+  "About Us",
+  includeMarkdown("teamabout.md")
 )
 
 # the ui function with navigation bar
